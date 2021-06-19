@@ -3,6 +3,7 @@
 @grayishBlue: hsl(212, 23%, 69%);
 @lightGrayishBlue: hsl(210, 46%, 95%);
 
+
 body, html{
     margin: 0;
     padding: 0;
@@ -28,7 +29,7 @@ body{
     
 }
 .article__container{
-    padding: 2rem;
+    padding: 2rem 2rem 1.5rem 2rem;
 }
 
 .article__header{
@@ -81,11 +82,12 @@ body{
 
 .cta__button{
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     border: none;
     background-color: #ecf0f9;
+    z-index: 1;
 }
 
 .share-icon{
@@ -98,4 +100,49 @@ body{
 
 .date{
     color: @grayishBlue;
+}
+
+.social-media__bar{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: @veryDarkGrayishBlue;
+    height: 79px;
+    // visibility: collapse;
+}
+.social__description{
+    color: @desaturatedDarkBlue;
+    padding-left: 2rem;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: 4px;
+    font-size: 15px;
+}
+
+.fab{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+}
+
+.fa-facebook-square{
+    left: 38%;
+}
+
+.fa-twitter{
+    left: 49%;
+}
+
+.fa-pinterest{
+    left: 60%;
+}
+
+.visible{
+    visibility: visible;
 }
