@@ -1,1 +1,77 @@
-// font-family: 'Manrope', sans-serif;
+@veryDarkGrayishBlue: hsl(217, 19%, 35%);
+@desaturatedDarkBlue: hsl(214, 17%, 51%);
+@grayishBlue: hsl(212, 23%, 69%);
+@lightGrayishBlue: hsl(210, 46%, 95%);
+
+body, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    overflow-x: hidden;
+    font-size: 13px;
+    height: 100vh;
+    background-color: @grayishBlue;
+}
+body{
+    display: flex;
+}
+.main__container{
+    background-color: @lightGrayishBlue;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: auto auto;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+.article__container{
+    padding: 2rem;
+}
+
+.article__header{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.photo__container img{
+    width: 100%;
+}
+
+.photo__container{
+    height: 200px;
+    overflow: hidden;
+}
+
+.author__container{
+    display: flex;
+}
+
+.author-date__container{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+.author__photo{
+    height: 40px;
+    border-radius: 50%;
+}
+
+.author-date__container{
+    flex-basis: 33%;
+    flex-grow: 1;
+    
+}
+
+.author__name{
+    font-weight: 700;
+}
+
+.article__description{
+    padding-bottom: 3rem;
+    font-size: 13px;
+    line-height: 150%;
+}
