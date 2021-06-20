@@ -5,168 +5,152 @@
 
 
 body, html{
+    height: 100vh;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Manrope', sans-serif;
-    overflow-x: hidden;
     font-size: 13px;
-    height: 100vh;
+    font-family: 'Manrope', sans-serif;
     background-color: #ecf0f9;
+    overflow-x: hidden;
     
 }
 body{
     display: flex;
 }
+
 .main__container{
-    background-color: white;
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 85%;
     margin: auto auto;
+    background-color: white;
     overflow: hidden;
     border-radius: 10px;
-    position: relative;
+    @media (min-width:768px) {
+        flex-direction: row;
+    }
+    .photo__container{
+        height: 200px;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+    }
     
 }
 .article__container{
     padding: 2rem 2rem 1.5rem 2rem;
-}
-
-.article__header{
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 150%;
-    color: @veryDarkGrayishBlue;
-}
-
-.photo__container img{
-    width: 100%;
-}
-
-.photo__container{
-    height: 200px;
-    overflow: hidden;
-}
-
-.author__container{
-    display: flex;
-    align-items: center;
-}
-
-.author-date__container{
-    display: flex;
-    flex-direction: column;
-    padding-left: 1rem;
-}
-
-.author__photo{
-    height: 40px;
-    border-radius: 50%;
-}
-
-.author-date__container{
-    flex-basis: 33%;
-    flex-grow: 1;
-    
-}
-
-.author__name{
-    font-weight: 700;
-    font-size: 10px;
-    @media (min-width:320px) {
+    .article__header{
+        color: @veryDarkGrayishBlue;
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 700;
+    }
+    .article__description{
+        padding-bottom: 3rem;
         font-size: 13px;
+        line-height: 150%;
+        color: @desaturatedDarkBlue;
     }
-}
-
-.article__description{
-    padding-bottom: 3rem;
-    font-size: 13px;
-    line-height: 150%;
-    color: @desaturatedDarkBlue;
-}
-
-.cta__button{
-    position: relative;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: none;
-    background-color: #ecf0f9;
-    z-index: 1;
-    cursor: pointer;
-}
-
-.share-icon{
-    height: 18px;
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-}
-
-.date{
-    color: @grayishBlue;
-    font-size: 10px;
-    @media (min-width:320px) {
-        font-size: 13px;
+    .author__container{
+        display: flex;
+        align-items: center;
+        .author__photo{
+            height: 40px;
+            border-radius: 50%;
+        }
+        .author-date__container{
+            display: flex;
+            flex-direction: column;
+            flex-basis: 33%;
+            flex-grow: 1;
+            padding-left: 1rem;
+            .author__name{
+                font-size: 10px;
+                font-weight: 700;
+                @media (min-width:320px) {
+                    font-size: 13px;
+                }
+            }
+            .date{
+                color: @grayishBlue;
+                font-size: 10px;
+                @media (min-width:320px) {
+                    font-size: 13px;
+                }
+            }
+        }
+        .cta__button{
+            position: relative;
+            width: 35px;
+            height: 35px;
+            background-color: #ecf0f9;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1;
+            .share-icon{
+                position: absolute;
+                height: 18px;
+                top: 50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .social-media__bar{
+            display: flex;
+            position: absolute;
+            height: 79px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: @veryDarkGrayishBlue;
+            visibility: collapse;
+            .social__description{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0;
+                padding-left: 2rem;
+                font-size: 15px;
+                color: @desaturatedDarkBlue;
+                letter-spacing: 4px;
+            }
+            .fab{
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                color: white;
+                cursor: pointer;
+                &:hover{
+                    color: @grayishBlue;
+                }
+            }
+            .fa-facebook-square{
+                left: 45%;
+                @media (min-width:321px) {
+                    left: 38%;
+                }
+            }
+            .fa-twitter{
+                left: 56%;
+                @media (min-width:321px) {
+                    left: 49%;
+                }
+            }
+            .fa-pinterest{
+                left: 67%;
+                @media (min-width:321px) {
+                    left: 60%;
+                }
+            }
+        }
     }
-    
-}
-
-.social-media__bar{
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: @veryDarkGrayishBlue;
-    height: 79px;
-    visibility: collapse;
-}
-.social__description{
-    color: @desaturatedDarkBlue;
-    padding-left: 2rem;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    letter-spacing: 4px;
-    font-size: 15px;
-}
-
-.fab{
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    color: white;
-}
-
-.fa-facebook-square{
-    left: 45%;
-    @media (min-width:321px) {
-        left: 38%;
-    }
-    
-}
-
-.fa-twitter{
-    left: 56%;
-    @media (min-width:321px) {
-        left: 49%;
-    }
-    
-}
-
-.fa-pinterest{
-    left: 67%;
-    @media (min-width:321px) {
-        left: 60%;
-    }
-    
 }
 
 .visible{
-    visibility: visible;
+    visibility: visible !important;
 }
